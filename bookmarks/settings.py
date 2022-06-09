@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g8*vm(!$x4943&r5zxg2qgg14(=u%ckp2&f9%r8fxx+_+rm7f2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',
-    'crispy_forms'
+    'crispy_forms',
+    'social_django',
+
 ]
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 MIDDLEWARE = [
@@ -101,6 +103,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
+
+
 LOGIN_REDIRECT_URL = '/accounts/'
 LOGIN_URL = '/accounts/login'
 LOGOUT_URL = '/accounts/logout'
