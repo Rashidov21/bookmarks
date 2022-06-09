@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/style.css ' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <span class="logo">Bookmarks</span>
+            </a>
+            <div class="d-flex">
+                <span>
+                    {% if request.user.is_authenticated %}
+                    <ul class="menu">
+                        <li {% if section == 'dashboard' %}class="selected" {% endif %}>
+                            <a href="{% url 'dashboard' %}">My dashboard</a>
+                        </li>
+                        <li {% if section == 'images' %}class="selected" {% endif %}>
+                            <a href="#">Images</a>
+                        </li>
+                        <li {% if section == 'people' %}class="selected" {% endif %}>
+                            <a href="#">People</a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                    <span class="user">
+                        {% if request.user.is_authenticated %}
+                        Hello {{ request.user.username }},
+                        <a href="{% url 'logout' %}" class="btn btn-outline-primary">Logout</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-outline-primary">Log-in</a>
+                        {% endif %}
+                    </span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content" class="container">
+        {% block content %} {% endblock %}
+    </div>
+    <footer>
+        <center>
+            <strong>This is Django 4 project tutorial</strong>
+        </center>
+    </footer>
+</body>
+
+</html>
