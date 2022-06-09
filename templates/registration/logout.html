@@ -1,7 +1,9 @@
 {% extends "base.html" %} {% block title %}Logged out{% endblock %} {% block content %}
-<h1>Logged out</h1>
-<p>
-    You have been successfully logged out. You can
-    <a href="{% url 'account:login '%}">log-in again</a>.
-</p>
+<section class="d-flex justify-conetent-center flex-column">
+    <h1>Logged out</h1>
+    <p>
+        You have been successfully logged out. You can <br><br>
+        <a href="{% url 'account:login' %}" class="btn btn-outline-primary">log-in again</a>
+    </p>
+</section>
 {% endblock %}

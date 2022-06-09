@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}Create an account{% endblock %} {% block content %}
+<section class="d-flex justify-content-center flex-column">
+    <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+    <form method="post" class="w-25">
+        {{ user_form|crispy}} {% csrf_token %}
+        <br>
+        <p><input type="submit" class="btn btn-outline-primary" value="Create my account"></p>
+    </form>
+</section>
+{% endblock %}

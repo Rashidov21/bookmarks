@@ -1,5 +1,5 @@
-{% extends "../base.html" %} {% block title %}Log-in{% endblock %} {% block content %}
-<section>
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}Log-in{% endblock %} {% block content %}
+<section class="d-flex justify-content-center flex-column">
     <h1>Log-in</h1>
     {% if form.errors %}
     <p>
@@ -8,15 +8,19 @@
     {% else %}
     <p>Please, use the following form to log-in:</p>
     {% endif %}
-    <div class="login-form">
+    <div class="login-form w-25">
         <form action="{% url 'account:login' %}" method="post">
             {{ form|crispy }} {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}" />
+            <br>
             <p><input type="submit" class="btn btn-success" value="Log-in"></p>
         </form>
+
+        <p>You have not an account ?
+            <a href="{% url 'account:register' %}">Register</a> now.
+        </p>
         <p>
-            Forgotten your password ?
-            <a href="{% url 'account:password_reset' %}" class="btn btn-outline-info">Reset password</a>
+            Forgotten your password ?<a href="{% url 'account:password_reset' %}" class="btn btn-outline-info d-inline-block">Reset password</a>
         </p>
     </div>
 

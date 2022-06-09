@@ -101,9 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/accounts/'
+LOGIN_URL = '/accounts/login'
+LOGOUT_URL = '/accounts/logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Internationalization

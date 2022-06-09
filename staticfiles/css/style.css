@@ -25,15 +25,6 @@ section {
     min-height: 100%;
 }
 
-footer {
-    height: 50px;
-    margin-top: -50px;
-    background-color: cadetblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 /* #header {
     width: 100%;

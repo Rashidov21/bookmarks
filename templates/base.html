@@ -20,21 +20,21 @@
     <body>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <span class="logo">Bookmarks</span>
                 </a>
                 <div class="d-flex">
                     {% if request.user.is_authenticated %}
                         <ul class="d-flex justify-content-around">
-                            <li {% if section == 'dashboard' %}class="selected"{% endif %}>
+                            <li {% if section == 'dashboard' %}class="nav-link"{% endif %}>
                                 <a href="{% url 'account:dashboard' %}">My dashboard</a>
                             </li>
-                            <li {% if section == 'images' %}class="selected"{% endif %}>
+                            {% comment %} <li {% if section == 'images' %}class="nav-link"{% endif %}>
                                 <a href="#">Images</a>
                             </li>
-                            <li {% if section == 'people' %}class="selected"{% endif %}>
+                            <li {% if section == 'people' %}class="nav-link"{% endif %}>
                                 <a href="#">People</a>
-                            </li>
+                            </li> {% endcomment %}
                         </ul>
                     {% endif %}
                     <span class="user">
@@ -51,10 +51,8 @@
         <div id="content" class="container">
             {% block content %}{% endblock %}
         </div>
-        <footer>
-            <center>
-                <strong>This is Django 4 project tutorial</strong>
-            </center>
+        <footer class="bg-dark text-white py-5 d-flex justify-content-center align-content-center">
+            <strong>This is Django 4 project tutorial</strong>
         </footer>
     </body>
 </html>
