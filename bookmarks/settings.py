@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account'
+    'account',
+    'crispy_forms'
 ]
-
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -104,7 +105,7 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 

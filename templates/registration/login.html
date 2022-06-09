@@ -9,11 +9,15 @@
     <p>Please, use the following form to log-in:</p>
     {% endif %}
     <div class="login-form">
-        <form action="{% url 'login' %}" method="post">
-            {{ form.as_p }} {% csrf_token %}
+        <form action="{% url 'account:login' %}" method="post">
+            {{ form|crispy }} {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}" />
-            <p><input type="submit" value="Log-in"></p>
+            <p><input type="submit" class="btn btn-success" value="Log-in"></p>
         </form>
+        <p>
+            Forgotten your password ?
+            <a href="{% url 'account:password_reset' %}" class="btn btn-outline-info">Reset password</a>
+        </p>
     </div>
 
 </section>
