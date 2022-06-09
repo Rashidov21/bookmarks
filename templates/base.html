@@ -6,6 +6,9 @@
         <title>
             {% block title %}{% endblock %}
         </title>
+        <link rel="shortcut icon"
+              href="{% static 'src/hacking.png' %}"
+              type="image/x-icon">
         <link href="{% static 'css/style.css ' %}" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
               rel="stylesheet"
@@ -21,23 +24,29 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <a href="/" class="navbar-brand">
-                    <span class="logo">Bookmarks</span>
+                    <span class="logo">
+                        <img src="{% static 'src/hacking.png' %}" width="40">
+                        Bookmarks
+                    </span>
                 </a>
-                <div class="d-flex">
+                <div class="d-none d-sm-none d-md-block">
                     {% if request.user.is_authenticated %}
                         <ul class="d-flex justify-content-around">
                             <li {% if section == 'dashboard' %}class="nav-link"{% endif %}>
                                 <a href="{% url 'account:dashboard' %}">My dashboard</a>
                             </li>
-                            {% comment %} <li {% if section == 'images' %}class="nav-link"{% endif %}>
-                                <a href="#">Images</a>
-                            </li>
-                            <li {% if section == 'people' %}class="nav-link"{% endif %}>
-                                <a href="#">People</a>
+                            {% comment %}
+                    <li {% if section=='images' %}class="nav-link"{% endif %}>
+                        <a href="#">Images</a>
+                    </li>
+                    <li {% if section=='people' %}class="nav-link"{% endif %}>
+                        <a href="#">People</a>
                             </li> {% endcomment %}
                         </ul>
                     {% endif %}
-                    <span class="user">
+                </div>
+                <div class="d-none d-sm-none d-md-block">
+                    <span class="user d-inline-block">
                         {% if request.user.is_authenticated %}
                             Hello {{ request.user.username }},
                             <a href="{% url 'account:logout' %}" class="btn btn-outline-primary">Logout</a>
