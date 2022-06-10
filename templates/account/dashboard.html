@@ -5,5 +5,16 @@
     <p>Welcome to your dashboard. You can <a href="{% url 'account:edit' %}">edit
             your profile</a> or <a href="{% url 'account:password_change' %}">change your
             password</a>.</p>
+    <br>
+    <ul class="list-group">
+        {% for user in users %}
+        <li class="list-group-item">
+            <a href="{% url 'account:profile' user.username %}">{{user.username}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'account:profile' request.user.username %}" class="btn btn-outline-info">
+        Your profile
+    </a>
 </section>
-{% endblock %}

@@ -1,17 +1,23 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
-from .models import Profile
+from .models import Profile, Followers
 # Create your views here.
 
 
 @login_required
 def dashboard(request):
+    users = User.objects.filter(is_active=True)
     return render(request,
                   'account/dashboard.html',
-                  {'section': 'dashboard'})
+                  {'section': 'dashboard', "users": users})
+
+
+def follow_user(request, user_name):
+    pass
 
 
 def register(request):
@@ -26,6 +32,7 @@ def register(request):
             # Save the User object
             new_user.save()
             Profile.objects.create(user=new_user)
+            Followers.objects.create(user=new_user)
             return render(request,
                           'account/register_done.html',
                           {'new_user': new_user})
@@ -85,5 +92,6 @@ def edit(request):
 
 
 @login_required
-def profile(request):
-    return render(request, "account/profile.html")
+def profile(request, user_name):
+    user = User.objects.get(username=user_name)
+    return render(request, "account/profile.html", {"user": user})

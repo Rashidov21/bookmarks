@@ -6,12 +6,25 @@
             <img src="{{ user.profile.photo.url }}" class="img-fluid w-50" alt="">
         </div>
         <div class="col-sm-12 col-md-8" id="kk">
-            <h4>
-                Usrname : <strong>{{ user.username }}</strong>
-            </h4>
-            <h4>Name :{{ user.first_name }}</h4>
-            <h4>Email :{{ user.email }}</h4>
-            <h4>Date of Birthday :{{ user.profile.date_of_birth }}</h4>
+            <div class="card p-3">
+                <h4>
+                    Usrname : <strong>{{ user.username }}</strong>
+                </h4>
+                <h4>Name :{{ user.first_name }}</h4>
+                <h4>Email :{{ user.email }}</h4>
+                <h4>Date of Birthday :{{ user.profile.date_of_birth }}</h4>
+                <br>
+                <div class="mt-1 p-3">
+                    <span>Followers: {{user.profile.followers }}</span>
+                    <span>Following: {{user.profile.follows }}</span>
+
+
+                    <div class="w-50 d-flex gap-3">
+                        <a href="#" class="btn btn-outline-warning">Unfollow</a>
+                        <a href="#" class="btn btn-outline-success">Follow</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
