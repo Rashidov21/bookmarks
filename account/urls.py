@@ -11,7 +11,7 @@ urlpatterns = [
     # register
     path('register/', views.register, name='register'),
     path('profile/<str:user_name>', views.profile, name='profile'),
-    #     path('follow/<str:user_name>', views.follow_user, name='follow'),
+    path('follow/<user_name>', views.follow_user, name='follow'),
     #login and logout
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),

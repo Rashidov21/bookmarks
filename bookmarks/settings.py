@@ -110,6 +110,7 @@ AUTHENTICATION_BACKENDS = [
     'account.authentication.EmailAuthBackend',
 ]
 
+AUTH_USER_MODEL = "auth.User"
 
 LOGIN_REDIRECT_URL = '/accounts/'
 LOGIN_URL = '/accounts/login'

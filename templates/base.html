@@ -34,6 +34,7 @@
                         <ul class="d-flex justify-content-around">
                             <li {% if section == 'dashboard' %}class="nav-link"{% endif %}>
                                 <a href="{% url 'account:dashboard' %}">My dashboard</a>
+                                <a href="{% url 'account:profile' request.user.username %}">{{request.user.username}}</a>
                             </li>
                             {% comment %}
                     <li {% if section=='images' %}class="nav-link"{% endif %}>
@@ -59,6 +60,13 @@
             </div>
         </nav>
         <div id="content" class="container">
+            {% if messages %}
+            <ul class="list-group p-3">
+                {% for message in messages %}
+                <li{% if message.tags %} class="list-group-item bg-{{ message.tags }} fs-3"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% block content %}{% endblock %}
         </div>
         <footer class="bg-dark text-white py-5 d-flex justify-content-center align-content-center">

@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -17,7 +19,33 @@ def dashboard(request):
 
 
 def follow_user(request, user_name):
-    pass
+    # following user
+    user = User.objects.get(username=request.user.username)
+    # print(user)
+    # will be followed user
+    f_user = User.objects.get(username=user_name)
+    # print(f_user)
+    # following user followers
+    user_follower = Followers.objects.get(user=user)
+
+    # check followers
+    if f_user not in user_follower.another_user.all():
+        user_follower.another_user.add(f_user)
+        user_follower.save()
+
+        print(user_follower.another_user)
+
+        f_user.profile.followers += 1
+        user.profile.follows += 1
+        user.profile.save()
+        f_user.profile.save()
+        messages.add_message(request, messages.SUCCESS,
+                             "You successfuly following this user!")
+        return redirect("account:profile", user_name=user_name)
+    else:
+        messages.add_message(request, messages.WARNING,
+                             "You followed this user!")
+        return redirect("account:profile", user_name=user_name)
 
 
 def register(request):
@@ -63,7 +91,7 @@ def user_login(request):
         return render(request, 'account/login.html', {'form': form})
 
 
-@login_required
+@ login_required
 def edit(request):
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user, data=request.POST)
@@ -91,7 +119,11 @@ def edit(request):
                                                  'profile_form': profile_form})
 
 
-@login_required
+@ login_required
 def profile(request, user_name):
     user = User.objects.get(username=user_name)
+
+    is_followed = False
+    # if user.followers.another_user
+
     return render(request, "account/profile.html", {"user": user})
