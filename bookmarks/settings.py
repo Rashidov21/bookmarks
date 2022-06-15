@@ -145,3 +145,6 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# name = "John"
+# surname = "Doe"
+# print(name + surname) # John Doe
