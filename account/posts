@@ -83,25 +83,59 @@ Typingstudy - bu 15 ta darsdan iborat bo'lgan 100 dan ortiq tillardagi to'liq ta
 
 
 RapidTyping - "ko'rmay yozish"ni o'rgatish uchun mo'ljallangan. Mavjud funktsiyalar - guruh mashg'ulotlari, rivojlanish va natijalar statistikasi. Bu yerda siz yozish tezligini sinab ko'rishingiz va o'z mahoratingizga ko'ra qiyinchilik darajasini tanlashingiz mumkin.
+#####################################
+Rebyata, blogimiz boshlanishida Python tilini bilish deyarli har bir inson uchun nima uchun muhimligini muhokama qilgan edik. Lekin bunga qanday erishiladi? Bunga ushbu tilning aniq afzalliklari tufayli erishiladi va ularning ro'yxati:
 
-Abdurakhmon, в прошлый раз мы с Вами обсудили, почему так важно знать язык Python практически каждому человеку. Но каким образом это достигается? А достигается это благодаря очевидным преимуществам этого языка, и вот их список:
+1. Krossplatformalilik. Python da yozgan dasturingiz Windows, Linux va Mac OS da ham ishlaydi.
 
-1. Кроссплатформенность. Программа, которую Вы напишите на Python, будет прекрасно работать и на Windows, и на Linux, и на Mac OS.
+2. Mutlaqo universal: amaliy dasturlar, veb-dasturlash, jarayonlarni avtomatlashtirish uchun barcha turdagi skriptlar, mikrokontroller dasturlash, mashina tilini o'rganish, katta ma'lumotlarni tahlil qilish, o'yinlar. Bundan tashqari boshqa sohalarda ham Pytonda dastur tuzish mumkin.
 
-2. Абсолютно универсален: прикладные программы, Web-программирование, всевозможные скрипты для автоматизации процессов, программирование микроконтроллеров, машинное обучение, анализ big data, игры.
+3. Boshqa dasturlash tillari Java va C++ dan farqli ravishda dasturlarni yozishning yuqori tezligi.
 
-3. Высокая скорость написания программ, в отличие от тех же Java и C++.
+4. Ko'p sonli tayyor bepul kutubxonalar (modullar). Tasvirga ishlov berish kerakmi?  YouTube’ga yuklangan video haqidagi barcha ma’lumotlarni (like/dislike lar, ko‘rishlar soni, teglar, sarlavha, yuklangan sana va hokazo) olish kerakmi?Biz uchinchi tomon kutubxonasini birinchi qatorda ko'rsatamiz va shunchaki tayyor funktsiyalardan foydalanamiz. Biz kutubxonani ulaymiz, funktsiyani chaqiramiz va hamma narsa tayyor.
 
-4. Огромное количество готовых бесплатных библиотек (модулей). Нужно сделать обработку изображения? Подключаем одной строчкой стороннюю библиотеку и просто используем готовые функции. Нужно получить всю информацию о видео, загруженном на YouTube (лайки/дизлайки, просмотры, теги, название, дату загрузки и так далее)? Опять же подключаем библиотеку, вызываем функцию и всё готово.
+5. Turli dasturlarda ba'zi vazifalarni avtomatlashtirish uchun o'z plaginlarini, modullarini yozish uchun foydalaniladi, jumladan: Blender, GIMP, Unreal Engine 4 va boshqa ko'plab.
 
-5. Используется для написания собственных плагинов, модулей, для автоматизации каких-то задач во множестве программ, включая: Blender, GIMP, Unreal Engine 4 и многие-многие другие.
+6. Hamma joyda, jumladan, yirik kompaniyalarda qo'llaniladi: Google, Yandex, Facebook, Mail.ru, NASA, IBM, Instagram va boshqalar. Natijada, bu til katta kelajakka ega va hozirda Python dasturchilariga talab yuqori.
 
-6. Используется повсеместно, в том числе, и в крупных компаниях, таких как: Google, Яндекс, Facebook, Mail.ru, NASA, IBM, Instagram и многих других. Как следствие, у этого языка прекрасное будущее и высокая востребованность Python-разработчиков уже сейчас.
+7. Veb da yaxshi ishlaydi. Ha, u C++ dan past, lekin PHP dan yuqori, bu oxir-oqibat uni Internet loyihalarini yaratishda ancha mashhur qildi (masalan, Wargaming xizmatlari Pythonda yozilgan).
 
-7. Хорошая производительность. Да, она ниже, чем у C++, но при этом выше, чем у PHP, что, в конечном итоге, делает его достаточно популярным при создании Интернет-проектов (например, сервисы Wargaming написаны на Python).
+8. Birinchi til uchun ajoyib variant.Bu bejiz emas, barchamizga ma'lum, bolalarning hozirgi avlodiga endi Turbo Paskal (bizning avlodni dasturlash tili bo'lgani kabi) yoki Basic emas, balki Python tili o'rgatilmoqda. Bu til bola dasturlashga kirib kelishi uchun past kirish plankasini beradi.Minimal bilimlar orqali dastur tuzish uchun xizmat qiladi.
 
-8. Отлично подходит для первого языка. Недаром, по моим наблюдением, современное поколение детей учат уже не Turbo Pascal (как я когда-то) или Basic, а именно язык Python. И молодцы те родители, которые с детства прививают любовь к программированию, тем более что на Python действительно можно достаточно легко делать сразу интересные для детей вещи, в первую очередь, игры.
+Bu juda ajoyib til, shuning uchun Python haqiqatan ham hech bo'lmaganda kompyuterlar bilan shug'ullanadigan har bir kishiga ma'lum bo'lishi kerak.
 
-Вот такой замечательный язык, поэтому Python надо знать действительно любому, кто хоть иногда имеет дело с компьютерами.
+Bugunga xozircha shu!
 
-На сегодня это всё, спасибо за внимание!
+
+Hamkorlikda ishlash uchun 10 ta insturment
+Masofadan turib ishlash uchun va jamoaviy ish uchun kerak bo'ladigan 10 ta muhim vositalarni siz uchun to'pladik.
+
+🎨 Veb-dizayner uchun 100 ta eng yaxshi vositalar
+1. Invision - bu dizayn guruhlari uchun oddiy prototip yaratish va hamkorlik qilish vositasi.
+
+2. GoVisually - loyihalaringiz bo'yicha mijozlarning fikr-mulohazalarini yig'ishning eng yaxshi usullaridan biri.
+
+3. Red Pen - eng tezkor qayta aloqa vositasidir.
+
+4. Mural - dizaynerlar va ishlab chiquvchilar uchun hamkorlik vositasi.
+
+5. Asana - jamoangiz bilan loyihalarni baham ko'ring, ko'ring va muhokama qiling
+
+6. Design Drop - tasvirlarni belgilang va ularni hamkasblar bilan baham ko'ring.
+
+7. Cage - bu jamoalar va mijozlar bilan hamkorlik qilish uchun asboblar paneli.
+
+8. Bounce – har qanday veb-saytda fikr almashishning qiziqarli va oson usuli.
+
+9. Proofhub - loyihalaringizni samarali boshqaring.
+
+10. Lingo - Vizual aktivlar kutubxonalarini yarating va ularni jamoangiz bilan baham ko'ring. Faqat MacOS uchun lekin
+
+
+
+
+
+
+
+
+
